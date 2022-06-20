@@ -81,7 +81,8 @@ main {
     justify-content: flex-end;
 }
 .main-image img, .main-image {
-    width: 10rem;
+    width: 17rem;
+    max-width:300px;
 }
 .weather-section {
     display: flex;
