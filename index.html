@@ -12,7 +12,7 @@
 <body>
 
   <div class="search-bar">
-    <div class="search-box center">
+    <div class="search-box left">
       <i class="fa-solid fa-magnifying-glass"></i><div class="search"><input type="text" name="search" id="search" value="" placeholder="Enter 'City, Country'"></input></div>
     </div>
     <div class="search-toggle hidden">
@@ -23,19 +23,19 @@
       </div>
       <div class="metric">Fahrenheit</div>
     </div>
+    <div class="nav"><i class="fa-solid fa-bars"></i></div>
   </div>
 
   <main>
     <div class="weather-info">
       <div class="weather-one">
         <div class="weather-one-info"><h1>Porto, Portugal</h1></div>
-        <div class="weather-one-info weekday">Tuesday</div>
-        <div class="weather-one-info date">21 Jun 2022</div>
+        <div class="weather-one-info date">Tuesday, 21 Jun 2022</div>
         <div class="weather-one-info temp">19°</div>
       </div>
       <div class="weather-two">
         <div class="weather-container">
-          <img class="main-image" src="images/forecast-rain.png" />
+          <img class="main-image" src="images/weather/sun-clouds.png" />
        </div>
       </div>
       <div class="weather-three">
@@ -62,13 +62,11 @@
 
     <div class="weather-forecast">
       <div class="forecast-container">
-        <div class="forecast" id="current-day-plus-one">
-          <div class="forecast-day">Wednesday</div>
-          <div class="forecast-temp">
-            <div class="forecast-temp-high">12 °C</div>
-            <div class="forecast-temp-low">6 °C</div>
-          </div>
-          <div class="forecast-daily__icon"></div>
+        <div class="forecast-day">Wednesday</div>
+        <div class="forecast-max">25°</div>
+        <div class="forecast-min">14°</div>
+        <div class="forecast-image">
+            <img src="images/weather/heavy-clouds.png" />
         </div>  
       </div>
       <div class="forecast-container">
@@ -97,6 +95,7 @@
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
     Coded by <a href="#">Your Name Here</a>.
   </div> -->
+  <!-- <a href="https://www.flaticon.com/free-icons/wind" title="wind icons">Wind icons created by iconixar - Flaticon</a> -->
   </footer>
   
   <script src="main.js"></script>

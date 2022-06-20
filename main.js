@@ -57,8 +57,6 @@ const searchMetric = document.querySelector('.search-toggle');
 function searchBarFocus(e) {
     // console.log(e.target.classList);
     // if(e.target.classList.contains('search-box center')) {
-        searchBox.className = 'search-box hidden';
-        searchBox.className = 'search-box left';
         searchMetric.className = 'search-toggle';
     // }
 }
