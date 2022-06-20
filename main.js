@@ -23,31 +23,44 @@ function getWeatherForecast() {
 getWeatherForecast();
 
 function showWeather(a) {
-    document.querySelector('main').innerHTML = '';
-    let output = 
-    `
-    <div class="job">
-        <img class="job_logo" src="#">
-        <div class="job_details">
-        <div class="details">
-            <span class="company"> </span>
-            <span class="box light ">New!</span>
-            <span class="box dark ">Featured</span>
-        </div>
-        <div class="details"><h1 class="title"> </h1></div>
-        <div class="details">
-            <span class="grey"> </span><span class="grey">&#183;</span>
-            <span class="grey"> </span><span class="grey">&#183;</span>
-            <span class="grey"> </span>
-        </div>
-        </div>
-        <div class="job_categories">
-            <div class="category" data-cat="role" data-name=" "> </div>
-            <div class="category" data-cat="level" data-name=" "> </div>
-        </div>
-    </div>
-    `;
-    document.querySelector('main').innerHTML = output;
+    // document.querySelector('main').innerHTML = '';
+    // let output = 
+    // `
+    // <div class="job">
+    //     <img class="job_logo" src="#">
+    //     <div class="job_details">
+    //     <div class="details">
+    //         <span class="company"> </span>
+    //         <span class="box light ">New!</span>
+    //         <span class="box dark ">Featured</span>
+    //     </div>
+    //     <div class="details"><h1 class="title"> </h1></div>
+    //     <div class="details">
+    //         <span class="grey"> </span><span class="grey">&#183;</span>
+    //         <span class="grey"> </span><span class="grey">&#183;</span>
+    //         <span class="grey"> </span>
+    //     </div>
+    //     </div>
+    //     <div class="job_categories">
+    //         <div class="category" data-cat="role" data-name=" "> </div>
+    //         <div class="category" data-cat="level" data-name=" "> </div>
+    //     </div>
+    // </div>
+    // `;
+    // document.querySelector('main').innerHTML = output;
+}
+
+document.querySelector('.search-bar').addEventListener('click', searchBarFocus);
+const searchBox = document.querySelector('.search-box');
+const searchMetric = document.querySelector('.search-toggle');
+
+function searchBarFocus(e) {
+    // console.log(e.target.classList);
+    // if(e.target.classList.contains('search-box center')) {
+        searchBox.className = 'search-box hidden';
+        searchBox.className = 'search-box left';
+        searchMetric.className = 'search-toggle';
+    // }
 }
 
 // Filter jobs by categories that are selected

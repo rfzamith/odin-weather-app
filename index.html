@@ -3,23 +3,94 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
   <link rel="stylesheet" href="style.css">
-  <title>Frontend Mentor | Job Listings</title>
+  <script src="https://kit.fontawesome.com/2f927fc7f2.js" crossorigin="anonymous"></script>
+  <title>Weather App</title>
 
 </head>
 <body>
-  <header>
-  </header>
-  <div class="filter_section hidden">
-    <div class="filter">
-      <div class="filter_categories"></div>
-      <div class="filter_clear">
-        <a href="javascript:void(0)" class="clear_button">Clear</a>
+
+  <div class="search-bar">
+    <div class="search-box center">
+      <i class="fa-solid fa-magnifying-glass"></i><div class="search"><input type="text" name="search" id="search" value="" placeholder="Enter 'City, Country'"></input></div>
+    </div>
+    <div class="search-toggle hidden">
+      <div class="metric">Celsius</div>
+      <div class="toggle-btn">
+        <input type="checkbox" id="toggle-btn-1">
+        <label for="toggle-btn-1"></label>
       </div>
+      <div class="metric">Fahrenheit</div>
     </div>
   </div>
+
   <main>
+    <div class="weather-info">
+      <div class="weather-one">
+        <div class="weather-one-info"><h1>Porto, Portugal</h1></div>
+        <div class="weather-one-info weekday">Tuesday</div>
+        <div class="weather-one-info date">21 Jun 2022</div>
+        <div class="weather-one-info temp">19°</div>
+      </div>
+      <div class="weather-two">
+        <div class="weather-container">
+          <img class="main-image white" src="images/forecast-sun-clouds.svg" />
+       </div>
+      </div>
+      <div class="weather-three">
+        <div class="weather-section">
+          <div class="weather-three-icon">
+            <img src="images/forecast-feels-like.svg" class="white"/>
+          </div>
+          <div class="weather-three-info">
+            <div class="weather-three-title">Feels Like</div>
+            <div class="weather-three-value">7°C</div>
+          </div>
+        </div>
+        <div class="weather-section">
+          <div class="weather-three-icon">
+            <img src="images/forecast-feels-like.svg" class="white"/>
+          </div>
+          <div class="weather-three-info">
+            <div class="weather-three-title">Feels Like</div>
+            <div class="weather-three-value">7°C</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="weather-forecast">
+      <div class="forecast-container">
+        <div class="forecast" id="current-day-plus-one">
+          <div class="forecast-day">Wednesday</div>
+          <div class="forecast-temp">
+            <div class="forecast-temp-high">12 °C</div>
+            <div class="forecast-temp-low">6 °C</div>
+          </div>
+          <div class="forecast-daily__icon"></div>
+        </div>  
+      </div>
+      <div class="forecast-container">
+        2
+      </div>
+      <div class="forecast-container">
+        3
+      </div>
+      <div class="forecast-container">
+        4
+      </div>
+      <div class="forecast-container">
+        5
+      </div>
+      <div class="forecast-container">
+        6
+      </div>
+      <div class="forecast-container">
+        7
+      </div>
+    </div>
+
   </main>
   <footer>
   <!-- <div class="attribution">

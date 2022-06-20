@@ -1,130 +1,119 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500&display=swap');
 
 @media screen and (max-width: 768px) {
-    header {
-        background-image: url(images/bg-header-mobile.svg);
-    }
-    .job {
-        margin-top: 2rem;
-    }
-    .job_logo {
-        margin-top: -3.5rem;
-    }
-    .job_details {
-        margin: 1rem 0;
-    }
-    .job_categories {
-        border-top: 1px solid hsl(180, 8%, 52%);
-        padding-top: 1rem;
-    }
-    .category {
-        display: inline-block;
-        margin: 0 0.4rem 0.4rem 0;
-    }
+    
 }
 @media screen and (min-width: 769px) {
-    header {
-        background-image: url(images/bg-header-desktop.svg);
-    }
-    .job {
-        display: flex;
-    }
-    .job_categories {
-        display: flex;
-        flex: 1;
-        align-items: center;
-        gap: 1rem;
-        justify-content: flex-end;
-    }
+    
 }
 body {
     font-size: 15px;
-    background-color: hsl(180, 52%, 96%);
     margin: 0;
+    padding: 10rem 7%;
     font-family: 'Montserrat', sans-serif;
+    color: #ffffff;
+    background: url(images/bg-04.jpg);
+    /* background: url(images/bg-day.jpeg); */
+    background-size: cover;
+    background-position: bottom;
 }
-header {
-    background-color: hsl(180, 29%, 50%);
-    display: flex;
-    min-height: 20vh;
-    background-size: auto;
+body::after {
+    content: "";
+    background-color: rgb(17, 10, 0);
+    /* day */
+    /* opacity: 0.3; */
+    /* night */
+    opacity: 0.7;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;   
+}
+h1 {
+    font-size: 40px;
+    margin: 0 0 0.8rem 0;
+}
+.weekday {
+    font-size: 22px;
+}
+.date {
+    font-size: 16px;
+}
+.temp {
+    font-size: 110px;
+}
+.weather-one-info {
+    padding: 0 0 0.3rem 0;
 }
 main {
-    padding: 0 10% 5rem 10%;
     display: flex;
     flex-direction: column;
+    padding: 0 0.5rem;
 }
-.job {
-    background-color: white;
-    padding: 2rem;
-    box-shadow: 0 1rem 1rem 0 rgb(91 164 164 / 20%);
-    border-radius: 0.4rem;
-    margin-bottom: 1.5rem;
-}
-.job_logo {
-    position: relative;
-    width: 80px;
-    height: 80px;
-    padding-right: 1rem;
-}
-
-.details {
+.weather-info {
     display: flex;
-    align-items: center;
-    gap: 0.6rem;
+    justify-content: space-between;
+    margin: 1rem 0 4rem 0;
+    gap: 2rem;
 }
-.company {
-    font-size: 1.1rem;
-    color: hsl(180, 29%, 50%);
-    font-weight: 500;
+.weather-container {
+    display: flex;
+    gap: 1rem;
 }
-.box {
-    border-radius: 14px;
-    font-weight: 500;
-    text-transform: uppercase;
-    color: white;
-    font-size: 0.8rem;
-    padding: 0.4rem 0.6rem 0.3rem 0.6rem;
+.weather-forecast {
+    display: flex;
+    gap: 1rem;
+    justify-content: space-between;
+
 }
-.light {
-    background-color: hsl(180, 29%, 50%);
+.weather-one, .weather-two, .weather-three {
+    width: 25%;
 }
-.dark {
-    background-color: hsl(180, 14%, 20%);
+.weather-two {
+    display: flex;
+    justify-content: center;
+    align-self: flex-start;
 }
-.grey {
-    color: hsl(180, 8%, 52%);
+.weather-three {
+    padding-top: 0.5rem;
+    justify-content: flex-end;
 }
-.title {
-    font-size: 1.3rem;
-    font-weight: 500;
-    margin: 1rem 0;
+.main-image img, .main-image {
+    width: 10rem;
 }
-/* .category {
-    background-color: hsl(180, 52%, 96%);
-    color: hsl(180, 29%, 50%);
-    font-size: 0.8rem;
-    padding: 0.4rem 0.6rem 0.3rem 0.6rem;
-} */
-.category {
-    background-color: hsl(180, 31%, 95%);
-    padding: 0.5rem;
-    border-radius: 0.2rem;
-    color: hsl(180, 29%, 50%);
-    font-weight: 500;
+.weather-section {
+    display: flex;
+    justify-content: flex-end;
 }
-.category:hover {
-    color: hsl(180, 31%, 95%);
-    background-color: hsl(180, 29%, 50%);
-    transition: all 0.3s ease-in-out;
-    cursor: pointer;
+.weather-three-icon, .weather-three-info {
+    display: inline-block;
+    padding: 0.8rem 0.5rem;
 }
-.featured {
-    border-left: solid 6px hsl(180, 29%, 50%);
+.weather-three-icon img {
+    padding-top: 0.2rem;
+    min-width: 2.3rem;
+}
+.weather-three-title {
+    font-size: 0.9rem;
+    width: 100%;
+}
+.weather-three-value {
+    font-size: 1.5rem;
+    width: 100%;
+}
+.white {
+    filter:  brightness(0) invert(1);
 }
 .hidden {
-    display: none;
-    visibility: hidden;
+    display: none !important;
+}
+.center {
+    justify-content: center;
+}
+.left {
+    justify-content: flex-start;
 }
 
 @keyframes append-animate {
@@ -134,67 +123,99 @@ main {
 	}
 	to {
 		transform: scale(1);
-		opacity: 1;	
+		opacity: 1;
 	}
 }
-.filter_section {
-    padding: 5rem 10% 0 10%;
-    display: flex;
-    flex-direction: column;
-}
-.filter {
+
+.search-bar {
     display: flex;
     align-items: center;
     padding: 1rem;
-    box-shadow: 0 1rem 1rem 0 rgb(91 164 164 / 20%);
+    /* box-shadow: 0 1rem 1rem 0 rgb(91 164 164 / 20%); */
     border-radius: 0.4rem;
-    background: white;
+    background: rgba(0, 0, 0, 0.35);
     margin-bottom: 1.5rem;
     margin-top: -100px;
 }
-.filter_clear {
-    display: flex;
-    justify-content: flex-end;
-}
-.clear_button {
-    color: hsl(180, 29%, 50%);
-    font-weight: 500;
-    text-decoration: none;
-}
-.clear_button:hover {
-    color: hsl(180, 14%, 20%);
-}
-.filter_categories {
+.search-box {
     display: flex;
     flex: 1;
     align-items: center;
     gap: 0.5rem;
-    justify-content: flex-start;
     padding: 0.5rem;
     flex-wrap: wrap;
+    animation: append-animate .4s linear;
 }
-.filtercategory {
-    background-color: hsl(180, 31%, 95%);
-    border-radius: 0.2rem;
-    color: hsl(180, 29%, 50%);
-    font-weight: 500;
+.search {
+    font-weight: 300;
     align-items: center;
     padding-left: 0.4rem;
-    height: 30px;
-    animation: append-animate .3s linear;
-    /* animation: fadeIn2 1.1s; */
+    color: #ccc;
 }
-.filtercategory span {
-    bottom: 30%;
-    position: relative;
+input[type=text] {
+    font-size: 18px;
+    font-weight: 300;
+    font-family: 'Montserrat', sans-serif;
+    color: #ffffff;
+    background-color: transparent;
+    border: none;
+    border-bottom: 0px solid #333;
+    outline: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    -webkit-box-sizing: content-box;
+    box-sizing: content-box;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+    width: 100%;
 }
-.filter_button {
-    background-color: hsl(180, 29%, 50%);
-    padding: 0.5rem;
-    margin-left: 0.4rem;
+input[type=text]::placeholder {
+    color: #eee;
 }
-.filter_button:hover {
-    background-color: hsl(180, 14%, 20%);
-    transition: all 0.3s ease-in-out;
-    cursor: pointer;
+.fa-solid, .fas {
+    font-size:22px;
+    color: #fff;
 }
+.metric {
+    align-items: center;
+    padding: 0.5rem 0.5rem;
+    color: #fff;
+    font-size: 13px;
+}
+.search-toggle {
+    display: flex;
+    animation: append-animate .4s linear;
+}
+.toggle-btn {
+}
+.toggle-btn label {
+    position:relative;
+    display:block;
+    width:50px;
+    height:30px;
+    background: #08aea6;
+    border-radius:30px;
+    transition:all 300ms linear;
+}
+
+.toggle-btn label:before {
+    position:relative;
+    content:"";
+    width:20px;
+    height:20px;
+    background:#ddd;
+    display:block;
+    border-radius:50%;
+    top:5px;
+    left:5px;
+}
+.toggle-btn input:checked + label {
+    background:#00acee;
+}
+.toggle-btn input:checked + label:before {
+    left: 25px;
+}
+.toggle-btn input {
+    display:none;
+}
+  
