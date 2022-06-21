@@ -33,7 +33,7 @@ body::after {
 main {
     display: flex;
     flex-direction: column;
-    padding: 1.2rem 7% 5rem 7%;
+    padding: 1.5rem 7% 5rem 7%;
 }
 .search-bar {
     display: flex;
@@ -152,7 +152,7 @@ footer a {
 .weather-info {
     display: flex;
     justify-content: space-between;
-    margin: 0.5rem 0 3rem 0;
+    margin: 0.5rem 0 2.8rem 0;
     gap: 2rem;
 }
 .weather-container {
