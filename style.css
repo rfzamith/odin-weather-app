@@ -27,14 +27,13 @@ body::after {
     left: 0;
     bottom: 0;
     right: 0;
-    position: absolute;
+    position: fixed;
     z-index: -1;
 }
 main {
     display: flex;
     flex-direction: column;
-    padding: 2rem 7% 5rem 7%;
-
+    padding: 1.2rem 7% 5rem 7%;
 }
 .search-bar {
     display: flex;
@@ -153,13 +152,14 @@ footer a {
 .weather-info {
     display: flex;
     justify-content: space-between;
-    margin: 0.5rem 0 2rem 0;
+    margin: 0.5rem 0 3rem 0;
     gap: 2rem;
 }
 .weather-container {
     display: flex;
     gap: 1rem;
     transform: scale(1.4);
+    animation: append-animate .4s linear;
 }
 .weather-forecast {
     display: flex;
@@ -167,7 +167,7 @@ footer a {
     justify-content: space-between;
 }
 .weather-one, .weather-two, .weather-three {
-    width: 25%;
+    /* width: 25%; */
 }
 .weather-two {
     display: flex;
@@ -198,11 +198,11 @@ footer a {
 }
 .weather-section {
     display: flex;
-    justify-content: flex-end;
+    justify-content: flex-start;
 }
 .weather-three-icon, .weather-three-info {
     display: inline-block;
-    padding: 0.8rem 0.5rem;
+    padding: 0.5rem 0.8rem;
 }
 .weather-three-icon img {
     padding-top: 0.2rem;
@@ -213,7 +213,7 @@ footer a {
     width: 100%;
 }
 .weather-three-value {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     width: 100%;
 }
 .white {
