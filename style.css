@@ -159,6 +159,7 @@ footer a {
 .weather-container {
     display: flex;
     gap: 1rem;
+    transform: scale(1.4);
 }
 .weather-forecast {
     display: flex;
@@ -182,7 +183,8 @@ footer a {
     opacity: 0.9;
 }
 .forecast-image img {
-    width: 6rem;
+    padding-top: 1rem;
+    width: 4rem;
     opacity: 0.8;
 }
 .forecast-day {

@@ -1,10 +1,49 @@
+const weatherStates = {
+    sunny: `<div class="icon sunny">
+  <div class="sun">
+    <div class="rays"></div>
+  </div>
+</div>`,
+    rainy: `<div class="icon rainy">
+  <div class="cloud"></div>
+  <div class="rain"></div>
+</div>`,
+    cloudy: `<div class="icon cloudy">
+  <div class="cloud"></div>
+  <div class="cloud"></div>
+</div>`,
+    showers: `<div class="icon sun-shower">
+  <div class="cloud"></div>
+  <div class="sun">
+    <div class="rays"></div>
+  </div>
+  <div class="rain"></div>
+</div>`,
+    thunder: `<div class="icon thunder-storm">
+    <div class="cloud"></div>
+    <div class="lightning">
+      <div class="bolt"></div>
+      <div class="bolt"></div>
+    </div>
+  </div>`,
+    snow: `<div class="icon flurries">
+    <div class="cloud"></div>
+    <div class="snow">
+      <div class="flake"></div>
+      <div class="flake"></div>
+    </div>
+  </div>`
+}
+
+console.log(weatherStates.sunny);
+
+
 function getWeatherForecast() {
   
     const xhr = new XMLHttpRequest();
   
     let weatherSearch = 'Porto, Portugal';
     let weatherUnit = 'metric';
-
     let searchURL = `https://api.openweathermap.org/data/2.5/weather?q=${weatherSearch}&APPID=07bd9d00d144fa7efbc0540a9556d244&units=${weatherUnit}`;
     xhr.open('GET', searchURL, true);
     

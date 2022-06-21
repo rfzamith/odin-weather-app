@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
   <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="weather.css">
   <script src="https://kit.fontawesome.com/2f927fc7f2.js" crossorigin="anonymous"></script>
   <title>Weather App</title>
 
@@ -35,7 +36,12 @@
       </div>
       <div class="weather-two">
         <div class="weather-container">
-          <img class="main-image" src="images/weather/sun-clouds.png" />
+          <div class="icon sun-shower">
+            <div class="cloud"></div>
+            <div class="sun">
+              <div class="rays"></div>
+            </div>
+          </div>
        </div>
       </div>
       <div class="weather-three">
@@ -53,8 +59,8 @@
             <img src="images/forecast-feels-like.svg" class="white"/>
           </div>
           <div class="weather-three-info">
-            <div class="weather-three-title">Feels Like</div>
-            <div class="weather-three-value">7°C</div>
+            <div class="weather-three-title">Humidity</div>
+            <div class="weather-three-value">70%</div>
           </div>
         </div>
       </div>
@@ -66,26 +72,56 @@
         <div class="forecast-max">25°</div>
         <div class="forecast-min">14°</div>
         <div class="forecast-image">
-            <img src="images/weather/heavy-clouds.png" />
+          <img src="images/forecast-sunny.svg" class="white">
         </div>  
       </div>
       <div class="forecast-container">
-        2
+        <div class="forecast-day">Wednesday</div>
+        <div class="forecast-max">25°</div>
+        <div class="forecast-min">14°</div>
+        <div class="forecast-image">
+          <img src="images/forecast-sunny.svg" class="white">
+        </div>  
       </div>
       <div class="forecast-container">
-        3
+        <div class="forecast-day">Wednesday</div>
+        <div class="forecast-max">25°</div>
+        <div class="forecast-min">14°</div>
+        <div class="forecast-image">
+          <img src="images/forecast-sun-clouds.svg" class="white">
+        </div>  
       </div>
       <div class="forecast-container">
-        4
+        <div class="forecast-day">Wednesday</div>
+        <div class="forecast-max">25°</div>
+        <div class="forecast-min">14°</div>
+        <div class="forecast-image">
+          <img src="images/forecast-sunny.svg" class="white">
+        </div>  
       </div>
       <div class="forecast-container">
-        5
+        <div class="forecast-day">Wednesday</div>
+        <div class="forecast-max">25°</div>
+        <div class="forecast-min">14°</div>
+        <div class="forecast-image">
+          <img src="images/forecast-sun-clouds.svg" class="white">
+        </div>  
       </div>
       <div class="forecast-container">
-        6
+        <div class="forecast-day">Wednesday</div>
+        <div class="forecast-max">25°</div>
+        <div class="forecast-min">14°</div>
+        <div class="forecast-image">
+          <img src="images/forecast-rain.svg" class="white">
+        </div>  
       </div>
       <div class="forecast-container">
-        7
+        <div class="forecast-day">Wednesday</div>
+        <div class="forecast-max">25°</div>
+        <div class="forecast-min">14°</div>
+        <div class="forecast-image">
+          <img src="images/forecast-rain.svg" class="white">
+        </div>  
       </div>
     </div>
 
@@ -98,6 +134,7 @@
   <!-- <a href="https://www.flaticon.com/free-icons/wind" title="wind icons">Wind icons created by iconixar - Flaticon</a> -->
   </footer>
   
-  <script src="main.js"></script>
+  <script type='text/javascript' src="main.js"></script>
+
 </body>
 </html>
