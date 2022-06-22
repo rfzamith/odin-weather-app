@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+  <!-- <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png"> -->
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="weather.css">
   <script src="https://kit.fontawesome.com/2f927fc7f2.js" crossorigin="anonymous"></script>
@@ -122,7 +122,10 @@
         <div class="forecast-max">25°</div>
         <div class="forecast-min">14°</div>
         <div class="forecast-image">
-          <img src="images/forecast-sun-clouds.svg" class="white">
+          <div class="icon cloudy">
+            <div class="cloud"></div>
+            <div class="cloud"></div>
+          </div>
         </div>  
       </div>
       <div class="forecast-container six">
@@ -130,8 +133,11 @@
         <div class="forecast-max">25°</div>
         <div class="forecast-min">14°</div>
         <div class="forecast-image">
-          <img src="images/forecast-rain.svg" class="white">
-        </div>  
+          <div class="icon rainy">
+            <div class="cloud"></div>
+            <div class="rain"></div>
+          </div>
+      </div>  
       </div>
       <div class="forecast-container seven">
         <div class="forecast-day">Wednesday</div>

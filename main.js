@@ -1,18 +1,28 @@
 const weatherStates = {
-    sunny: `<div class="icon sunny">
+    clearSkyDay: `<div class="icon sunny">
   <div class="sun">
     <div class="rays"></div>
   </div>
 </div>`,
-    rainy: `<div class="icon rainy">
+    clearSkyNight: ``,
+    showerRain: `<div class="icon rainy">
   <div class="cloud"></div>
   <div class="rain"></div>
 </div>`,
-    cloudy: `<div class="icon cloudy">
+    scatteredClouds: `<div class="icon cloudy">
+<div class="cloud"></div>
+</div>`,
+    brokenClouds: `<div class="icon cloudy">
   <div class="cloud"></div>
   <div class="cloud"></div>
 </div>`,
-    showers: `<div class="icon sun-shower">
+    cloudsSun: `<div class="icon sun-shower">
+    <div class="cloud"></div>
+    <div class="sun">
+      <div class="rays"></div>
+    </div>
+  </div>`,
+    rainSun: `<div class="icon sun-shower">
   <div class="cloud"></div>
   <div class="sun">
     <div class="rays"></div>
@@ -35,62 +45,57 @@ const weatherStates = {
   </div>`
 }
 
-console.log(weatherStates.sunny);
+const search = document.querySelector('.search');
+search.addEventListener('keypress', getWeather);
 
-
-function getWeatherForecast() {
-  
-    const xhr = new XMLHttpRequest();
-  
-    let weatherSearch = 'Porto, Portugal';
-    let weatherUnit = 'metric';
-    let searchURL = `https://api.openweathermap.org/data/2.5/weather?q=${weatherSearch}&APPID=07bd9d00d144fa7efbc0540a9556d244&units=${weatherUnit}`;
-    xhr.open('GET', searchURL, true);
-    
-    xhr.onload = function(e) {
-      if(this.status == 200) {
-          const list = JSON.parse(this.responseText);
-          console.log(list);
-          showWeather(list);
-          // const output = `<span id='joke'>${joke.value.joke}</span>`
-          // document.querySelector('.box').innerHTML = output;
+function getWeather(a) {
+    if (a.key === "Enter") {
+      console.log('entered getWeather()')
+      const xhr = new XMLHttpRequest();
+      let weatherSearch = search.firstChild.value;
+      let weatherUnit = 'metric';
+      // mine 07bd9d00d144fa7efbc0540a9556d244
+      // 20f7632ffc2c022654e4093c6947b4f4
+      let searchURL = `https://api.openweathermap.org/data/2.5/weather?q=${weatherSearch}&APPID=20f7632ffc2c022654e4093c6947b4f4&units=${weatherUnit}`;
+      xhr.open('GET', searchURL, true);
+      xhr.onload = function() {
+        if(this.status == 200) {
+            const w = JSON.parse(this.responseText);
+            console.log(w);
+            showWeather(w);
+            const main = document.querySelector('main');
+            // main.style.visibility = 'hidden';
+            document.querySelector('main').style.visibility = 'hidden';
+            setTimeout("document.querySelector('main').style.visibility = '';", 500);
+            document.querySelector('.weather-one-info').firstChild.innerHTML = w.name;
+            document.querySelector('.weather-container').innerHTML = "";
+            // if(w.weather[0].description == 'clear sky') { document.querySelector('.weather-container').innerHTML = weatherStates.clear; }
+            // if(w.weather[0].description == 'few clouds') { 
+            //   // day document.querySelector('.weather-container').innerHTML = weatherStates.cloudsSun; 
+            //   // night document.querySelector('.weather-container').innerHTML = weatherStates.cloudsMoon; 
+            // }
+            // if(w.weather[0].description == 'scattered clouds') { document.querySelector('.weather-container').innerHTML = weatherStates.scatteredClouds; }
+            // if(w.weather[0].description == 'broken clouds') { document.querySelector('.weather-container').innerHTML = weatherStates.brokenClouds; }
+            // if(w.weather[0].description == 'shower rain') { document.querySelector('.weather-container').innerHTML = weatherStates.showerRain; }
+            // if(w.weather[0].description == 'rain') { 
+            //   // day document.querySelector('.weather-container').innerHTML = weatherStates.rainSun;
+            //   // day document.querySelector('.weather-container').innerHTML = weatherStates.rainMoon;
+            // }
+            // if(w.weather[0].description == 'thunderstorm') { document.querySelector('.weather-container').innerHTML = weatherStates.thunder; }
+            // if(w.weather[0].description == 'snow') { document.querySelector('.weather-container').innerHTML = weatherStates.snow; }
+        }
+      xhr.send();
       }
     }
-    xhr.send();
-  }
-  
-getWeatherForecast();
+}
 
 function showWeather(a) {
     // document.querySelector('main').innerHTML = '';
     // let output = 
-    // `
-    // <div class="job">
-    //     <img class="job_logo" src="#">
-    //     <div class="job_details">
-    //     <div class="details">
-    //         <span class="company"> </span>
-    //         <span class="box light ">New!</span>
-    //         <span class="box dark ">Featured</span>
-    //     </div>
-    //     <div class="details"><h1 class="title"> </h1></div>
-    //     <div class="details">
-    //         <span class="grey"> </span><span class="grey">&#183;</span>
-    //         <span class="grey"> </span><span class="grey">&#183;</span>
-    //         <span class="grey"> </span>
-    //     </div>
-    //     </div>
-    //     <div class="job_categories">
-    //         <div class="category" data-cat="role" data-name=" "> </div>
-    //         <div class="category" data-cat="level" data-name=" "> </div>
-    //     </div>
-    // </div>
-    // `;
-    // document.querySelector('main').innerHTML = output;
+
 }
 
 document.querySelector('.search-bar').addEventListener('click', searchBarFocus);
-const searchBox = document.querySelector('.search-box');
 const searchMetric = document.querySelector('.search-toggle');
 
 function searchBarFocus(e) {
