@@ -1,49 +1,49 @@
-const weatherStates = {
-    clearSkyDay: `<div class="icon sunny">
-  <div class="sun">
-    <div class="rays"></div>
-  </div>
-</div>`,
-    clearSkyNight: ``,
-    showerRain: `<div class="icon rainy">
-  <div class="cloud"></div>
-  <div class="rain"></div>
-</div>`,
-    scatteredClouds: `<div class="icon cloudy">
-<div class="cloud"></div>
-</div>`,
-    brokenClouds: `<div class="icon cloudy">
-  <div class="cloud"></div>
-  <div class="cloud"></div>
-</div>`,
-    cloudsSun: `<div class="icon sun-shower">
-    <div class="cloud"></div>
-    <div class="sun">
-      <div class="rays"></div>
-    </div>
-  </div>`,
-    rainSun: `<div class="icon sun-shower">
-  <div class="cloud"></div>
-  <div class="sun">
-    <div class="rays"></div>
-  </div>
-  <div class="rain"></div>
-</div>`,
-    thunder: `<div class="icon thunder-storm">
-    <div class="cloud"></div>
-    <div class="lightning">
-      <div class="bolt"></div>
-      <div class="bolt"></div>
-    </div>
-  </div>`,
-    snow: `<div class="icon flurries">
-    <div class="cloud"></div>
-    <div class="snow">
-      <div class="flake"></div>
-      <div class="flake"></div>
-    </div>
-  </div>`
-}
+// const weatherStates = {
+//     clearSkyDay: `<div class="icon sunny">
+//   <div class="sun">
+//     <div class="rays"></div>
+//   </div>
+// </div>`,
+//     clearSkyNight: ``,
+//     showerRain: `<div class="icon rainy">
+//   <div class="cloud"></div>
+//   <div class="rain"></div>
+// </div>`,
+//     scatteredClouds: `<div class="icon cloudy">
+// <div class="cloud"></div>
+// </div>`,
+//     brokenClouds: `<div class="icon cloudy">
+//   <div class="cloud"></div>
+//   <div class="cloud"></div>
+// </div>`,
+//     cloudsSun: `<div class="icon sun-shower">
+//     <div class="cloud"></div>
+//     <div class="sun">
+//       <div class="rays"></div>
+//     </div>
+//   </div>`,
+//     rainSun: `<div class="icon sun-shower">
+//   <div class="cloud"></div>
+//   <div class="sun">
+//     <div class="rays"></div>
+//   </div>
+//   <div class="rain"></div>
+// </div>`,
+//     thunder: `<div class="icon thunder-storm">
+//     <div class="cloud"></div>
+//     <div class="lightning">
+//       <div class="bolt"></div>
+//       <div class="bolt"></div>
+//     </div>
+//   </div>`,
+//     snow: `<div class="icon flurries">
+//     <div class="cloud"></div>
+//     <div class="snow">
+//       <div class="flake"></div>
+//       <div class="flake"></div>
+//     </div>
+//   </div>`
+// }
 
 const search = document.querySelector('.search');
 search.addEventListener('keypress', getWeather);
@@ -56,13 +56,13 @@ function getWeather(a) {
       let weatherUnit = 'metric';
       // mine 07bd9d00d144fa7efbc0540a9556d244
       // 20f7632ffc2c022654e4093c6947b4f4
-      let searchURL = `https://api.openweathermap.org/data/2.5/weather?q=${weatherSearch}&APPID=20f7632ffc2c022654e4093c6947b4f4&units=${weatherUnit}`;
-      xhr.open('GET', searchURL, true);
+      // let searchURL = `https://api.openweathermap.org/data/2.5/weather?q=${weatherSearch}&APPID=20f7632ffc2c022654e4093c6947b4f4&units=${weatherUnit}`;
+      xhr.open('GET', 'http://api.icndb.com/jokes/random/', true);
+      console.log(xhr);
       xhr.onload = function() {
         if(this.status == 200) {
-            const w = JSON.parse(this.responseText);
-            console.log(w);
-            showWeather(w);
+            const weather = JSON.parse(this.responseText);
+            console.log(weather);
             const main = document.querySelector('main');
             // main.style.visibility = 'hidden';
             document.querySelector('main').style.visibility = 'hidden';
