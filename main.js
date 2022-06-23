@@ -1,109 +1,160 @@
-// const weatherStates = {
-//     clearSkyDay: `<div class="icon sunny">
-//   <div class="sun">
-//     <div class="rays"></div>
-//   </div>
-// </div>`,
-//     clearSkyNight: ``,
-//     showerRain: `<div class="icon rainy">
-//   <div class="cloud"></div>
-//   <div class="rain"></div>
-// </div>`,
-//     scatteredClouds: `<div class="icon cloudy">
-// <div class="cloud"></div>
-// </div>`,
-//     brokenClouds: `<div class="icon cloudy">
-//   <div class="cloud"></div>
-//   <div class="cloud"></div>
-// </div>`,
-//     cloudsSun: `<div class="icon sun-shower">
-//     <div class="cloud"></div>
-//     <div class="sun">
-//       <div class="rays"></div>
-//     </div>
-//   </div>`,
-//     rainSun: `<div class="icon sun-shower">
-//   <div class="cloud"></div>
-//   <div class="sun">
-//     <div class="rays"></div>
-//   </div>
-//   <div class="rain"></div>
-// </div>`,
-//     thunder: `<div class="icon thunder-storm">
-//     <div class="cloud"></div>
-//     <div class="lightning">
-//       <div class="bolt"></div>
-//       <div class="bolt"></div>
-//     </div>
-//   </div>`,
-//     snow: `<div class="icon flurries">
-//     <div class="cloud"></div>
-//     <div class="snow">
-//       <div class="flake"></div>
-//       <div class="flake"></div>
-//     </div>
-//   </div>`
-// }
+const weatherStates = {
+    clearSkyDay: `<div class="icon sunny">
+  <div class="sun">
+    <div class="rays"></div>
+  </div>
+</div>`,
+    clearSkyNight: `<div class="icon sunny">
+    <div class="moon-clear"></div>
+    <div class="moon-clear"></div>
+  </div>`,
+    showerRain: `<div class="icon rainy">
+  <div class="cloud"></div>
+  <div class="rain"></div>
+</div>`,
+    scatteredClouds: `<div class="icon cloudy">
+<div class="cloud"></div>
+</div>`,
+    brokenClouds: `<div class="icon cloudy">
+  <div class="cloud"></div>
+  <div class="cloud"></div>
+</div>`,
+    cloudsSun: `<div class="icon sun-shower">
+    <div class="cloud"></div>
+    <div class="sun">
+    </div>
+  </div>`,
+    cloudsMoon: `<div class="icon sun-shower">
+    <div class="cloud"></div>
+    <div class="moon">
+    </div>
+  </div>`,
+    rainSun: `<div class="icon sun-shower">
+  <div class="cloud"></div>
+  <div class="sun">
+    <div class="rays"></div>
+  </div>
+  <div class="rain"></div>
+</div>`,
+    thunder: `<div class="icon thunder-storm">
+    <div class="cloud"></div>
+    <div class="lightning">
+      <div class="bolt"></div>
+      <div class="bolt"></div>
+    </div>
+  </div>`,
+    snow: `<div class="icon flurries">
+    <div class="cloud"></div>
+    <div class="snow">
+      <div class="flake"></div>
+      <div class="flake"></div>
+    </div>`,
+    mist: `<div class="icon flurries">
+    <div class="cloud"></div>
+    <div class="snow">
+      <div class="flake"></div>
+      <div class="flake"></div>
+    </div>
+  </div>`
+}
+
+let weatherUnit = 'metric';
+document.querySelector('main').style.visibility = 'hidden';
 
 const search = document.querySelector('.search');
-search.addEventListener('keypress', getWeather);
+search.firstChild.value = 'London, UK';
+getWeather(search.firstChild.value);
+getForecast(search.firstChild.value);
+search.addEventListener('keypress', loadSearch);
+
+function loadSearch(a) {
+  if (a.key === "Enter") {
+    console.log('enter pressed');
+    getWeather(search.firstChild.value);
+  }
+}
 
 function getWeather(a) {
-    if (a.key === "Enter") {
-      console.log('entered getWeather()')
-      const xhr = new XMLHttpRequest();
-      let weatherSearch = search.firstChild.value;
-      let weatherUnit = 'metric';
-      // mine 07bd9d00d144fa7efbc0540a9556d244
-      // 20f7632ffc2c022654e4093c6947b4f4
-      // let searchURL = `https://api.openweathermap.org/data/2.5/weather?q=${weatherSearch}&APPID=20f7632ffc2c022654e4093c6947b4f4&units=${weatherUnit}`;
-      xhr.open('GET', 'http://api.icndb.com/jokes/random/', true);
-      console.log(xhr);
-      xhr.onload = function() {
-        if(this.status == 200) {
-            const weather = JSON.parse(this.responseText);
-            console.log(weather);
-            const main = document.querySelector('main');
-            // main.style.visibility = 'hidden';
-            document.querySelector('main').style.visibility = 'hidden';
-            setTimeout("document.querySelector('main').style.visibility = '';", 500);
-            document.querySelector('.weather-one-info').firstChild.innerHTML = w.name;
-            document.querySelector('.weather-container').innerHTML = "";
-            // if(w.weather[0].description == 'clear sky') { document.querySelector('.weather-container').innerHTML = weatherStates.clear; }
-            // if(w.weather[0].description == 'few clouds') { 
-            //   // day document.querySelector('.weather-container').innerHTML = weatherStates.cloudsSun; 
-            //   // night document.querySelector('.weather-container').innerHTML = weatherStates.cloudsMoon; 
-            // }
-            // if(w.weather[0].description == 'scattered clouds') { document.querySelector('.weather-container').innerHTML = weatherStates.scatteredClouds; }
-            // if(w.weather[0].description == 'broken clouds') { document.querySelector('.weather-container').innerHTML = weatherStates.brokenClouds; }
-            // if(w.weather[0].description == 'shower rain') { document.querySelector('.weather-container').innerHTML = weatherStates.showerRain; }
-            // if(w.weather[0].description == 'rain') { 
-            //   // day document.querySelector('.weather-container').innerHTML = weatherStates.rainSun;
-            //   // day document.querySelector('.weather-container').innerHTML = weatherStates.rainMoon;
-            // }
-            // if(w.weather[0].description == 'thunderstorm') { document.querySelector('.weather-container').innerHTML = weatherStates.thunder; }
-            // if(w.weather[0].description == 'snow') { document.querySelector('.weather-container').innerHTML = weatherStates.snow; }
-        }
-      xhr.send();
+    let searchURL = `https://api.openweathermap.org/data/2.5/weather?q=${a}&APPID=07bd9d00d144fa7efbc0540a9556d244&units=${weatherUnit}`;
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', searchURL, true);
+    xhr.onload = function() {
+      if(this.status == 200) {
+          const w = JSON.parse(this.responseText);
+          console.log(w);
+          document.querySelector('main').style.visibility = 'hidden';
+          setTimeout("document.querySelector('main').style.visibility = '';", 500);
+          document.querySelector('.weather-one-info').firstChild.innerHTML = w.name;
+          const d = new Date();
+          const localTime = d.getTime();
+          const localOffset = d.getTimezoneOffset() * 60000;
+          const time = (localTime + localOffset) + (1000 * w.timezone);
+          const finalTime = new Date(time);
+          const hour = finalTime.getHours();
+          const minutes = String(finalTime.getMinutes()).padStart(2, '0');
+          const weekday = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+          document.querySelector('.date').innerHTML = `${weekday[finalTime.getDay()]}, ${finalTime.getDate()} ${finalTime.toLocaleString('default', 
+                    { month: 'long' })} ${finalTime.getHours()}:${minutes}`;
+          document.querySelector('.temp').innerHTML = `${Math.round(w.main.temp)}°`;
+          // document.querySelector('.temp-max').innerHTML = `${Math.round(w.main.temp_max)}°`;
+          // document.querySelector('.temp-min').innerHTML = `${Math.round(w.main.temp_min)}°`;
+          document.querySelector('.feels-like').innerHTML = `${Math.round(w.main.feels_like)}°`;
+          document.querySelector('.humidity').innerHTML = `${w.main.humidity}%`;
+          document.querySelector('.chance-of-rain').innerHTML = `${Math.round(w.main.feels_like)}°`;
+          document.querySelector('.wind').innerHTML = `${Math.round(w.wind.speed)} km/h`;
+
+          if(w.weather[0].description == 'clear sky') { 
+            if(hour > 19 && hour < 24 || hour >= 0 && hour <= 7 ) {
+              document.querySelector('.weather-container').innerHTML = weatherStates.clearSkyNight;
+            } else { document.querySelector('.weather-container').innerHTML = weatherStates.clearSkyDay;  }
+          }
+          if(w.weather[0].description == 'few clouds') { 
+            if(hour > 19 && hour < 24 || hour >= 0 && hour <= 20 ) {
+              document.querySelector('.weather-container').innerHTML = weatherStates.cloudsMoon; 
+            } else { document.querySelector('.weather-container').innerHTML = weatherStates.cloudsSun; }
+          }
+          if(w.weather[0].description == 'scattered clouds') { document.querySelector('.weather-container').innerHTML = weatherStates.scatteredClouds; }
+          if(w.weather[0].description == 'broken clouds' || w.weather[0].description == 'overcast clouds') { document.querySelector('.weather-container').innerHTML = weatherStates.brokenClouds; }
+          if(w.weather[0].description == 'shower rain') { document.querySelector('.weather-container').innerHTML = weatherStates.showerRain; }
+          if(w.weather[0].description == 'rain') { 
+            // day document.querySelector('.weather-container').innerHTML = weatherStates.rainSun;
+            // day document.querySelector('.weather-container').innerHTML = weatherStates.rainMoon;
+          }
+          if(w.weather[0].description == 'thunderstorm') { document.querySelector('.weather-container').innerHTML = weatherStates.thunder; }
+          if(w.weather[0].description == 'snow') { document.querySelector('.weather-container').innerHTML = weatherStates.snow; }
       }
     }
+    xhr.send();
 }
 
-function showWeather(a) {
-    // document.querySelector('main').innerHTML = '';
-    // let output = 
-
+function getForecast(a) {
+    let searchURL = `https://api.openweathermap.org/data/2.5/forecast?q=${a}&APPID=07bd9d00d144fa7efbc0540a9556d244&units=${weatherUnit}`;
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', searchURL, true);
+    xhr.onload = function() {
+    if(this.status == 200) {
+        const w = JSON.parse(this.responseText);
+        console.log(w);
+      }
+    }
+    xhr.send();
 }
 
-document.querySelector('.search-bar').addEventListener('click', searchBarFocus);
-const searchMetric = document.querySelector('.search-toggle');
+// function showWeather(a) {
+//     // document.querySelector('main').innerHTML = '';
+//     // let output = 
 
-function searchBarFocus(e) {
-    // console.log(e.target.classList);
-    // if(e.target.classList.contains('search-box center')) {
-        searchMetric.className = 'search-toggle';
-    // }
-}
+// }
+
+// document.querySelector('.search-bar').addEventListener('click', searchBarFocus);
+// const searchMetric = document.querySelector('.search-toggle');
+
+// function searchBarFocus(e) {
+//     // console.log(e.target.classList);
+//     // if(e.target.classList.contains('search-box center')) {
+//         searchMetric.className = 'search-toggle';
+//     // }
+// }
 
 // Filter jobs by categories that are selected
 

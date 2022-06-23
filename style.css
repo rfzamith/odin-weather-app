@@ -158,7 +158,7 @@ footer a {
 .weather-container {
     display: flex;
     gap: 1rem;
-    transform: scale(1.4);
+    transform: scale(1.6);
     animation: append-animate .4s linear;
 }
 .weather-forecast {
@@ -182,10 +182,9 @@ footer a {
     width: 10rem;
     opacity: 0.9;
 }
-.forecast-image img {
-    padding-top: 1rem;
-    width: 4rem;
-    opacity: 0.8;
+.forecast-image {
+    transform: scale(0.8);
+    width: 70%;
 }
 .forecast-day {
     font-size: 22px;
