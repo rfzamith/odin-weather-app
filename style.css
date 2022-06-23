@@ -16,13 +16,14 @@
     .weather-forecast {
         text-align: center;
         padding-top: 2rem;
+        border-top: 1px solid #aaa;
     }
     .forecast-image {
-        transform: scale(1.2);
+        transform: scale(1.4);
         width: 100%;
     }
     .forecast-day {
-        font-size: 33px;
+        font-size: 35px;
     }
     .forecast-max {
         font-size: 50px;
