@@ -1,10 +1,65 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500&display=swap');
 
 @media screen and (max-width: 768px) {
-    
+    .weather-info {
+    }
+    .weather-one {
+        text-align: center;
+    }
+    .weather-three {
+        justify-content: flex-end;
+        display: flex;
+    }
+    .weather-section {
+        text-align: center;
+    }
+    .weather-forecast {
+        text-align: center;
+        padding-top: 2rem;
+    }
+    .forecast-image {
+        transform: scale(1.2);
+        width: 100%;
+    }
+    .forecast-day {
+        font-size: 33px;
+    }
+    .forecast-max {
+        font-size: 50px;
+    }
+    .forecast-min {
+        font-size: 26px;
+    }
 }
 @media screen and (min-width: 769px) {
-    
+    .weather-info {
+        display: flex;
+        justify-content: space-between;
+        gap: 2rem;
+    }
+    .weather-section {
+        display: flex;
+        justify-content: flex-start;
+    }
+    .weather-forecast {
+        display: flex;
+        gap: 1rem;
+        justify-content: space-between;
+        min-height: 13rem;
+    }
+    .forecast-image {
+        transform: scale(0.8);
+        width: 70%;
+    }
+    .forecast-day {
+        font-size: 22px;
+    }
+    .forecast-max {
+        font-size: 40px;
+    }
+    .forecast-min {
+        font-size: 26px;
+    }
 }
 body {
     font-size: 15px;
@@ -34,6 +89,17 @@ main {
     display: flex;
     flex-direction: column;
     padding: 1.5rem 7% 5rem 7%;
+}
+.weather-info {
+    margin: 0.5rem 0 2.8rem 0;
+}
+.weather-two {
+    display: flex;
+    justify-content: center;
+    align-self: flex-start;
+}
+.weather-three {
+    padding-top: 0.5rem;
 }
 .search-bar {
     display: flex;
@@ -149,56 +215,14 @@ footer a {
     color: #333;
     text-decoration: none;
 }
-.weather-info {
-    display: flex;
-    justify-content: space-between;
-    margin: 0.5rem 0 2.8rem 0;
-    gap: 2rem;
-}
 .weather-container {
     display: flex;
     gap: 1rem;
     transform: scale(1.6);
     animation: append-animate .4s linear;
 }
-.weather-forecast {
-    display: flex;
-    gap: 1rem;
-    justify-content: space-between;
-    min-height: 13rem;
-}
 .weather-one, .weather-two, .weather-three {
     /* width: 25%; */
-}
-.weather-two {
-    display: flex;
-    justify-content: center;
-    align-self: flex-start;
-}
-.weather-three {
-    padding-top: 0.5rem;
-    justify-content: flex-end;
-}
-.main-image img, .main-image {
-    width: 10rem;
-    opacity: 0.9;
-}
-.forecast-image {
-    transform: scale(0.8);
-    width: 70%;
-}
-.forecast-day {
-    font-size: 22px;
-}
-.forecast-max {
-    font-size: 40px;
-}
-.forecast-min {
-    font-size: 26px;
-}
-.weather-section {
-    display: flex;
-    justify-content: flex-start;
 }
 .weather-three-icon, .weather-three-info {
     display: inline-block;
