@@ -31,7 +31,6 @@ const weatherStates = {
     rainSun: `<div class="icon sun-shower">
   <div class="cloud"></div>
   <div class="sun">
-    <div class="rays"></div>
   </div>
   <div class="rain"></div>
 </div>`,
@@ -156,25 +155,26 @@ function getWeather(a,b,w) {
 
 
           // top center section
-          if(w.weather[0].description == 'clear sky') { 
-            if(hour > 19 && hour < 24 || hour >= 0 && hour <= 7 ) {
-              document.querySelector('.weather-container').innerHTML = weatherStates.clearSkyNight;
-            } else { document.querySelector('.weather-container').innerHTML = weatherStates.clearSkyDay;  }
-          }
-          if(w.weather[0].description == 'few clouds') { 
-            if(hour > 19 && hour < 24 || hour >= 0 && hour <= 7 ) {
-              document.querySelector('.weather-container').innerHTML = weatherStates.cloudsMoon; 
-            } else { document.querySelector('.weather-container').innerHTML = weatherStates.cloudsSun; }
-          }
-          if(w.weather[0].description == 'scattered clouds') { document.querySelector('.weather-container').innerHTML = weatherStates.scatteredClouds; }
-          if(w.weather[0].description == 'broken clouds' || w.weather[0].description == 'overcast clouds') { document.querySelector('.weather-container').innerHTML = weatherStates.brokenClouds; }
-          if(w.weather[0].description == 'shower rain') { document.querySelector('.weather-container').innerHTML = weatherStates.showerRain; }
-          if(w.weather[0].description == 'light rain') { 
-            // day document.querySelector('.weather-container').innerHTML = weatherStates.rainSun;
-            // day document.querySelector('.weather-container').innerHTML = weatherStates.rainMoon;
-          }
-          if(w.weather[0].description == 'thunderstorm') { document.querySelector('.weather-container').innerHTML = weatherStates.thunder; }
-          if(w.weather[0].description == 'snow') { document.querySelector('.weather-container').innerHTML = weatherStates.snow; }
+          document.querySelector('.weather-container').innerHTML = getWeatherIcon(y.current.weather[0].description, finalTime.getHours());
+          // if(w.weather[0].description == 'clear sky') { 
+          //   if(hour > 19 && hour < 24 || hour >= 0 && hour <= 7 ) {
+          //     document.querySelector('.weather-container').innerHTML = weatherStates.clearSkyNight;
+          //   } else { document.querySelector('.weather-container').innerHTML = weatherStates.clearSkyDay;  }
+          // }
+          // if(w.weather[0].description == 'few clouds') { 
+          //   if(hour > 19 && hour < 24 || hour >= 0 && hour <= 7 ) {
+          //     document.querySelector('.weather-container').innerHTML = weatherStates.cloudsMoon; 
+          //   } else { document.querySelector('.weather-container').innerHTML = weatherStates.cloudsSun; }
+          // }
+          // if(w.weather[0].description == 'scattered clouds') { document.querySelector('.weather-container').innerHTML = weatherStates.scatteredClouds; }
+          // if(w.weather[0].description == 'broken clouds' || w.weather[0].description == 'overcast clouds') { document.querySelector('.weather-container').innerHTML = weatherStates.brokenClouds; }
+          // if(w.weather[0].description == 'shower rain') { document.querySelector('.weather-container').innerHTML = weatherStates.showerRain; }
+          // if(w.weather[0].description == 'light rain') { 
+          //   // day document.querySelector('.weather-container').innerHTML = weatherStates.rainSun;
+          //   // day document.querySelector('.weather-container').innerHTML = weatherStates.rainMoon;
+          // }
+          // if(w.weather[0].description == 'thunderstorm') { document.querySelector('.weather-container').innerHTML = weatherStates.thunder; }
+          // if(w.weather[0].description == 'snow') { document.querySelector('.weather-container').innerHTML = weatherStates.snow; }
 
 
           // top right section

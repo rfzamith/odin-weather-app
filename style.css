@@ -42,7 +42,10 @@
         font-size: 26px;
     }
     .cloud + .sun {
-        margin: -2em 4.5em;
+        margin: -2em 2.5em;
+    }
+    .moon-clear, .moon-clear:nth-child(2) {
+        margin: -1.25em 0.5em;
     }
 }
 @media screen and (min-width: 641px) and (max-width: 1007px) {
@@ -87,7 +90,10 @@
         font-size: 26px;
     }
     .cloud + .sun {
-        margin: -2em 4em;
+        margin: -2em 1.5em;
+    }
+    .moon-clear, .moon-clear:nth-child(2) {
+        margin: -1.25em 0.5em;
     }
 }
 @media screen and (min-width: 1008px) {
@@ -121,6 +127,9 @@
     }
     .cloud + .sun {
         margin: -2em 1em;
+    }
+    .moon-clear, .moon-clear:nth-child(2) {
+        margin: -1.25em 0.6em;
     }
 }
 body {
