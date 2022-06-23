@@ -73,9 +73,9 @@ body {
 }
 .sun-clear {
   position: absolute;
-  top: 37%;
-  left: 50%;
-  margin: -1.25em;
+  top: 41%;
+  left: 47%;
+  margin: -1.45em;
   border-radius:50%;
   height: 3.7em;
   width: 3.7em;
@@ -156,9 +156,6 @@ body {
 }
 .rays:before {
   transform: rotate(120deg);
-}
-.cloud + .sun {
-  margin: -2em 1em;
 }
 .cloud + .moon {
   margin: -2em 1em;
