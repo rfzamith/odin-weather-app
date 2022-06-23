@@ -190,14 +190,16 @@ function getWeather(a,b,w) {
           for(i=1; i<8; i++) {
             output += `
               <div class="forecast-container">
-              <div class="forecast-day">`;
-              if((finalTime.getDay()+i) <= 6) {
-                  output+= weekday[finalTime.getDay()+i];
-              } else { output+= weekday[finalTime.getDay()+i-7] };
-              output += `</div>
-              <div class="forecast-max">${Math.round(y.daily[i].temp.max)}°</div>
-              <div class="forecast-min">${Math.round(y.daily[i].temp.min)}°</div>
-              <div class="forecast-image">${getWeatherIcon(y.daily[i].weather[0].description)}</div> 
+                <div class="forecast-info">
+                  <div class="forecast-day">`;
+                  if((finalTime.getDay()+i) <= 6) {
+                      output+= weekday[finalTime.getDay()+i];
+                  } else { output+= weekday[finalTime.getDay()+i-7] };
+                  output += `</div>
+                  <div class="forecast-max">${Math.round(y.daily[i].temp.max)}°</div>
+                  <div class="forecast-min">${Math.round(y.daily[i].temp.min)}°</div>
+                </div>
+                <div class="forecast-image">${getWeatherIcon(y.daily[i].weather[0].description)}</div> 
               </div>`;
           }
           document.querySelector('.weather-forecast').innerHTML += output;
