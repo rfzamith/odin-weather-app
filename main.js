@@ -67,17 +67,17 @@ let coord = { lon: '', lat: '' }
 document.querySelector('main').style.visibility = 'hidden';
 loadSearch('London, UK');
 const search = document.querySelector('.search');
-search.addEventListener('click', showMetricToggle);
-document.querySelector('.toggle-btn').addEventListener('click', changeMetric);
+// search.addEventListener('click', showMetricToggle);
+// document.querySelector('.toggle-btn').addEventListener('click', changeMetric);
 
-function showMetricToggle() {
-  document.querySelector('.search-toggle').classList.value = 'search-toggle';
-}
-function changeMetric() {
-  if(weatherUnit == 'metric') { weatherUnit = 'imperial'; }
-  else if(weatherUnit == 'imperial') { weatherUnit = 'metric'; }
-  loadSearch(search.firstChild.value);
-}
+// function showMetricToggle() {
+//   document.querySelector('.search-toggle').classList.value = 'search-toggle';
+// }
+// function changeMetric() {
+//   if(weatherUnit == 'metric') { weatherUnit = 'imperial'; }
+//   else if(weatherUnit == 'imperial') { weatherUnit = 'metric'; }
+//   loadSearch(search.firstChild.value);
+// }
 
 search.addEventListener('keypress', newSearch);
 
