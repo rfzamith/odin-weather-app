@@ -1,4 +1,4 @@
-# Oding Project - Weather Dashboard
+# The Odin Project - Weather Dashboard
 
 This project is part of the Odin Project JavaScript course: [https://www.theodinproject.com/](https://www.theodinproject.com/).
 
