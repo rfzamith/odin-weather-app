@@ -20,11 +20,9 @@ This project is part of the Odin Project JavaScript course: [https://www.theodin
 
 ### The challenge
 
-- Search for a location and view the current weather and forecast for the next 7 days
-- View the optimal layout for the site depending on their device's screen size
-- Perform new searches, the page will update automatically using JS language
-- 
-- Filter job listings based on the categories
+- The user should be able to search for a location and view the current weather and forecast for 7 days
+- Ability to perform new searches, the page will update automatically using JS language
+- Optimal layout for the site depending on their device's screen size
 
 ### Screenshot
 
@@ -32,15 +30,15 @@ This project is part of the Odin Project JavaScript course: [https://www.theodin
 
 ### Links
 
-- Solution URL: [https://github.com/rfzamith/fm-static-job-listings/](https://github.com/rfzamith/fm-static-job-listings/)
+- Solution URL: [https://github.com/rfzamith/odin-weather-app](https://github.com/rfzamith/odin-weather-app)
 - Live Site URL: [https://rfzamith.github.io/odin-weather-app/](https://rfzamith.github.io/odin-weather-app/)
 
 ## My process
 
 ### Built with
 
-- HTML: Semantic Elements, Data Attributes
-- CSS: Flexbox, Animation Keyframes
+- HTML: Semantic Elements
+- CSS: Flexbox, Animation Keyframes, Weather Icons
 - JavaScript
 <!-- 
 ### What I learned
@@ -54,4 +52,3 @@ Use this section to outline areas that you want to continue focusing on in futur
 ## Author
 
 - Website - [https://www.ruizamith.com](https://www.ruizamith.com)
-- Frontend Mentor - [@rfzamith](https://www.frontendmentor.io/profile/rfzamith)
