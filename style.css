@@ -163,6 +163,9 @@ main {
     flex-direction: column;
     padding: 1.5rem 7% 5rem 7%;
 }
+.forecast-image {
+    margin-top: -1.2rem;
+}
 .weather-info {
     margin: 0.5rem 0 2.8rem 0;
 }
