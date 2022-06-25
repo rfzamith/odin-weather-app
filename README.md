@@ -46,9 +46,7 @@ This project is part of the Odin Project JavaScript course: [https://www.theodin
 - Use the user's current location as default location in the weather app, when loading the first time.
 - Add a settings panel, where the user can change the language and the unit system unit from celsius to fahrenheit.
 
-Great opportunity to continue to expand my knowledge of CSS, JavaScript and DOM manipulation. This was a very enjoyable project, very challenging 
-<!--
-### Continued development
+<!-- ### Continued development
 
 Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect. -->
 
