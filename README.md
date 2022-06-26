@@ -20,9 +20,9 @@ This project is part of the Odin Project JavaScript course: [https://www.theodin
 
 ### The challenge
 
-- The user should be able to search for a location and view the current weather and forecast for 7 days
+- Weather app where user can perform a search view the current weather and weather forecast on that particular location
 - Ability to perform new searches, the page will update automatically using JS language
-- Optimal layout for the site depending on their device's screen size
+- Responsive design
 
 ### Screenshot
 
@@ -40,12 +40,13 @@ This project is part of the Odin Project JavaScript course: [https://www.theodin
 - HTML: Semantic Elements
 - CSS: Flexbox, Animation Keyframes, Weather Icons
 - JavaScript
-<!-- 
-### What I learned
+ 
+### Future improvements
 
-Great opportunity to continue to expand my knowledge of CSS, JavaScript and DOM manipulation. This was a very enjoyable project, very challenging 
+- Use the user's current location as default location in the weather app, when loading the first time.
+- Add a settings panel, where the user can change the language and the unit system unit from celsius to fahrenheit.
 
-### Continued development
+<!-- ### Continued development
 
 Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect. -->
 
